@@ -6,6 +6,11 @@ import pandas as pd
 
 tips = pd.read_csv('../data/tips.csv')
 
+
+sns.set_style('darkgrid')
+sns.lmplot(data = tips, x='total_bill', y='tip')
+plt.show()
+
 sns.set_style('whitegrid')
 
 ax = sns.kdeplot(data=tips, x='total_bill', y='tip', fill=True)
@@ -14,7 +19,7 @@ plt.tight_layout()
 plt.show()
 
 sns.set_style('darkgrid')
-sns.jointplot(data=tips, x='total_bill', y='tip',kind='kde', fill=True)
+sns.jointplot(data=tips, x='total_bill', y='tip', kind='kde', fill=True)
 ax.set(title='JointPlot')
 plt.tight_layout()
 plt.grid(True)
